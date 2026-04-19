@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO & Search Marketing | Digital Marketing Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<canvas id="starfield"></canvas>
+<div class="scanlines"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="seo.html" class="active">SEO</a></li>
+    <li><a href="social-media.html">Social Media</a></li>
+    <li><a href="email-marketing.html">Email</a></li>
+    <li><a href="mobile-marketing.html">Mobile</a></li>
+    <li><a href="affiliate-marketing.html">Affiliate</a></li>
+    <li><a href="content-marketing.html">Content</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-icon text-cyan">🔍</div>
+    <h1 class="hero-title" style="font-size:clamp(2rem,6vw,5rem);">
+      <span class="line1">SEO &</span>
+      <span class="line2">SEARCH</span>
+      <span class="line3">MARKETING</span>
+    </h1>
+    <p class="hero-subtitle">Techniques that help your website rank higher in organic search results — making you visible to billions of daily searches.</p>
+  </section>
+
+  <!-- What is SEO -->
+  <section class="section">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Definition</span>
+      <h2 class="section-title">What is <span>SEO?</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Search Engine Optimization (SEO) refers to techniques that help your website rank higher in organic (or "natural") search results, thus making your website more visible to people who are looking for your product or service via search engines. It is a long-term process that requires continuous monitoring, content creation, and optimization to maintain and improve rankings.</p>
+    </div>
+
+    <!-- How Search Engines Work -->
+    <div class="section-header animate-in" style="margin-top:4rem;">
+      <span class="section-tag">// Process</span>
+      <h2 class="section-title">How Search Engines <span>Work</span></h2>
+    </div>
+
+    <div class="process-steps animate-in">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-title">🕷️ CRAWLING</div>
+        <p class="step-text">A software called a spider or crawler (like Googlebot) fetches all web pages linked to a website, systematically visiting and collecting data.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-title">📂 INDEXING</div>
+        <p class="step-text">Creating an index of all fetched pages in a giant database. Words and expressions that best describe each page are identified and assigned keywords.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-title">⚙️ PROCESSING</div>
+        <p class="step-text">When a search request arrives, the engine compares the search string with all indexed pages in the database to find matches.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <div class="step-title">📊 RELEVANCY</div>
+        <p class="step-text">The search engine calculates the relevancy of each matching page to the search string using complex algorithms with hundreds of variables.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">05</div>
+        <div class="step-title">📋 RESULTS</div>
+        <p class="step-text">The best-matched results are retrieved and displayed in the browser — ranked by relevance, authority, and dozens of other ranking factors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Process -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Campaign Steps</span>
+      <h2 class="section-title">SEO <span>Optimization Process</span></h2>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🔑</span>
+        <div class="card-number">STEP 01</div>
+        <h3 class="card-title">Keyword Research</h3>
+        <p class="card-text">Identifying keyword phrases used in optimization. Requires finding a balanced combination of high searcher usage and relatively low competition. Tools analyze search volume and competitive landscape.</p>
+        <div class="tags"><span class="tag tag-cyan">Volume</span><span class="tag tag-pink">Competition</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎯</span>
+        <div class="card-number">STEP 02</div>
+        <h3 class="card-title">Reporting & Goal Setting</h3>
+        <p class="card-text">Establishing starting position within search engines, understanding site traffic statistics, knowing which search engines refer visitors, what keyword phrases are used, bounce rates, and popular content.</p>
+        <div class="tags"><span class="tag tag-cyan">Analytics</span><span class="tag tag-yellow">Baseline</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">✍️</span>
+        <div class="card-number">STEP 03</div>
+        <h3 class="card-title">Content Building</h3>
+        <p class="card-text">Content is king in SEO. High-volume, high-quality content gives users a reason to stay and return. Search engines store information about your business, translating to better keyword rankings.</p>
+        <div class="tags"><span class="tag tag-green">Quality</span><span class="tag tag-cyan">Relevant</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">⚡</span>
+        <div class="card-number">STEP 04</div>
+        <h3 class="card-title">Page Optimization</h3>
+        <p class="card-text">Tackling on-page elements: Page Titles, Text-Based Navigation, Prominence of Targeted Keywords, Site Maps, ALT tags, META data, and cleaning up the code for maximum efficiency.</p>
+        <div class="tags"><span class="tag tag-pink">On-Page</span><span class="tag tag-cyan">Meta Tags</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">🔗</span>
+        <div class="card-number">STEP 05</div>
+        <h3 class="card-title">Social & Link Building</h3>
+        <p class="card-text">Building social media presence and acquiring quality backlinks from authority sites. Social signals (likes, shares, tweets) now directly correlate with search rankings.</p>
+        <div class="tags"><span class="tag tag-cyan">Backlinks</span><span class="tag tag-pink">Social</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">📈</span>
+        <div class="card-number">STEP 06</div>
+        <h3 class="card-title">Follow-Up Reporting</h3>
+        <p class="card-text">Ongoing monitoring and analysis of results. SEO does not start and finish with initial work — continual content building and performance tracking is essential for sustained success.</p>
+        <div class="tags"><span class="tag tag-yellow">Monitoring</span><span class="tag tag-green">Growth</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Page SEO -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// On-Page SEO</span>
+      <h2 class="section-title">5 Key On-Page <span>Optimization Elements</span></h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem;" class="animate-in">
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>1. Page Copy — Content Quality & Keyword Density</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Each piece of content should focus on a single primary keyword or key phrase with a keyword density of 3–5% as per industry standard. Maintain a mix of primary and secondary keywords. Quality over quantity — web pages with more content depth have performed better since the 2011 Google algorithm update. Avoid keyword stuffing; write for humans first, search engines second.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>2. Title Tags — The Most Important Element</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Title tags contain the words in the clickable search result link. Google limits page titles to 70 characters, so they must be keyword-relevant yet concise. Place primary keywords first, then secondary keywords, and branded keywords last. This is a core part of the "big three" along with page copy and inbound links.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>3. Meta Data — The CTR Booster</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Meta descriptions summarize page content (155–160 characters, alphanumeric only). While they no longer directly influence rankings (since Google's 2009 declaration), they act as ad copy for organic results, influencing click-through rates. Google highlights meta description keywords that match the search phrase.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>4. Heading Tags — Content Structure Signals</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Heading tags (H1–H6) define page content section by section, like traditional headings. There should be one H1 per page containing the most relevant keyword phrase. H2 and H3 tags organize sub-sections and can include secondary keyphrases. Search engines still assign value to properly structured heading hierarchies.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          <span>5. Interlinking — Contextual Navigation</span>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Strategically linking pages within your website provides context to search engines and improves user experience. Best practices: include links in main content, use keyword-rich anchor text, avoid non-descriptive anchors like "click here", link to deep relevant pages, use breadcrumb navigation, and monitor inbound links via Google Webmaster Tools. Fewer links = more authority per link.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Off-Page SEO -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Off-Page SEO</span>
+      <h2 class="section-title">Off-Page <span>Optimization</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Off-Page SEO refers to your website's overall "authority" on the web, determined by what other websites say about your site. It's a long-term process all about your online reputation. Backlinks are the currency of any off-page strategy — focus on quality links from relevant, authoritative domains rather than quantity from unrelated sources.</p>
+    </div>
+
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-top:2rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🏆</span>
+        <h3 class="card-title">Acquiring Backlinks</h3>
+        <p class="card-text">Getting links from higher authority sites in your niche. Search engines treat link quality as a key ranking factor — buying backlinks from unrelated domains can even penalize your site.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">💬</span>
+        <h3 class="card-title">Social Interaction</h3>
+        <p class="card-text">Google gives prominence to social signals: tweets, likes, shares, Google +1 votes. Your site's social footprints have a direct relation with rankings. SEO has now evolved into social.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📢</span>
+        <h3 class="card-title">Content Promotion</h3>
+        <p class="card-text">Promote across Facebook, Twitter, LinkedIn, Pinterest, and Quora. Each platform serves a different tone — keep Facebook casual, use LinkedIn for professional content, Pinterest for visual products.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Types -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// SEO Types</span>
+      <h2 class="section-title">Types of <span>SEO</span></h2>
+    </div>
+    <div class="cards-grid animate-in">
+      <div class="card-3d">
+        <span class="card-icon text-cyan">⚙️</span>
+        <h3 class="card-title">Technical SEO</h3>
+        <p class="card-text">Optimizing crawling and indexing so search engines can discover, read, and understand your website. Covers site speed, mobile-friendliness, structured data, and URL structure.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-pink">📄</span>
+        <h3 class="card-title">Content SEO</h3>
+        <p class="card-text">Giving both users and search engines the content they want. Satisfying search intent with high-quality, relevant, original content that answers user questions comprehensively.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-yellow">📍</span>
+        <h3 class="card-title">Local SEO</h3>
+        <p class="card-text">Optimizing your website so people can find and visit your brick-and-mortar store. Includes Google My Business, local citations, and location-specific keyword targeting.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-green">🛒</span>
+        <h3 class="card-title">E-Commerce SEO</h3>
+        <p class="card-text">SEO rules specific to online stores — product page optimization, category pages, schema markup for products, and managing duplicate content across large product catalogs.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-purple)">📱</span>
+        <h3 class="card-title">Mobile SEO</h3>
+        <p class="card-text">Making it easy for users to find and use your website on mobile devices and tablets. Mobile-first indexing means Google primarily uses the mobile version of content.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-cyan">🔗</span>
+        <h3 class="card-title">Off-Page SEO</h3>
+        <p class="card-text">Promoting your website on the internet through quality backlinks, social signals, and external authority building to prove your site deserves a top spot for target keywords.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PPC Section -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Paid Search</span>
+      <h2 class="section-title">Pay-Per-Click <span>(PPC) Advertising</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>PPC stands for Pay-Per-Click — a model of digital advertising where the advertiser pays a fee each time one of their ads is clicked. Essentially, you're paying for targeted visits to your website. PPC ads come in different shapes and sizes, made up of text, images, videos, or combinations. They appear on search engines, websites, and social media platforms.</p>
+    </div>
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:2rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎯</span>
+        <h3 class="card-title">Bid on Keywords</h3>
+        <p class="card-text">Craft relevant keyword lists, tight keyword groups, and proper ad text targeting the exact search terms your customers use.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🏠</span>
+        <h3 class="card-title">Landing Page Quality</h3>
+        <p class="card-text">Create optimized landing pages with persuasive, relevant content and clear calls-to-action tailored to specific search queries.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">⭐</span>
+        <h3 class="card-title">Quality Score</h3>
+        <p class="card-text">Google's rating of your keywords, landing pages, and campaigns. Higher Quality Scores mean more ad clicks at lower costs per click.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">✨</span>
+        <h3 class="card-title">Capture Attention</h3>
+        <p class="card-text">Enticing ad copy is vital. For display or social ads, eye-catching creative makes the difference between scroll-past and click-through.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LSI Section -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Advanced SEO</span>
+      <h2 class="section-title">Latent Semantic <span>Indexing (LSI)</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Latent Semantic Indexing (LSI) is a method of analyzing documents to discover statistical co-occurrences of words that appear together, giving insights into the topics of those words. LSI keywords are semantically related terms that help search engines understand page context more accurately.</p>
+    </div>
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-top:2rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🛡️</span>
+        <h3 class="card-title">Prevents Spam Labeling</h3>
+        <p class="card-text">Varied semantically-related keyword mentions increase content credibility. Avoids being reported as spam by users who don't find expected content.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📉</span>
+        <h3 class="card-title">Reduces Bounce Rates</h3>
+        <p class="card-text">Prevents ranking for wrong search terms. If selling Lenovo notebooks, you don't want traffic from people searching for the movie "The Notebook."</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🌊</span>
+        <h3 class="card-title">Natural Content Flow</h3>
+        <p class="card-text">Makes content natural and meaningful without keyword stuffing. Differentiates high-quality content from keyword-dense spam content.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner animate-in" style="padding:2rem;">
+    <h2 class="cta-title">Next: Social Media Marketing →</h2>
+    <p class="cta-desc">Learn how to build brand awareness and engage customers across all major social platforms.</p>
+    <a href="social-media.html" class="btn-primary"><span>Explore Social Media →</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+      <p class="footer-desc">Your complete guide to digital marketing mastery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Core Modules</h4>
+      <ul class="footer-links">
+        <li><a href="seo.html">SEO & SEM</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="email-marketing.html">Email Marketing</a></li>
+        <li><a href="mobile-marketing.html">Mobile Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More Topics</h4>
+      <ul class="footer-links">
+        <li><a href="affiliate-marketing.html">Affiliate Marketing</a></li>
+        <li><a href="content-marketing.html">Content & Blogging</a></li>
+        <li><a href="strategy.html">Strategy & CRM</a></li>
+        <li><a href="careers.html">Career Paths</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>Digital Marketing Hub</span> · SEO Module</div>
+    <div class="footer-socials"><a href="#"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></a><a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a><a href="#"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Marketing & Blogging | Digital Marketing Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Video Card Enhancements ── */
+    .video-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,255,255,0.15);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .video-card:hover {
+      border-color: rgba(0,255,255,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,255,255,0.12);
+    }
+    .video-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .video-card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .video-card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--neon-cyan, #00ffff);
+      margin: 0;
+    }
+    .video-card-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.72);
+      margin: 0;
+    }
+    .video-embed-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .video-embed-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ff0000;
+      background: rgba(255,0,0,0.1);
+      border: 1px solid rgba(255,0,0,0.25);
+      border-radius: 20px;
+      padding: 0.25rem 0.65rem;
+      width: fit-content;
+    }
+    .video-label::before {
+      content: "▶";
+      font-size: 0.6rem;
+    }
+    .video-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    /* ── Video Grid ── */
+    .video-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    /* ── Blog Platform Cards ── */
+    .blog-platform-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,255,255,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-platform-card:hover {
+      border-color: rgba(0,255,255,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,255,255,0.12);
+    }
+    .blog-platform-img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-bottom: 1px solid rgba(0,255,255,0.1);
+      background: #111;
+    }
+    .blog-platform-img-fallback {
+      width: 100%;
+      height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, rgba(0,255,255,0.05), rgba(255,0,128,0.05));
+      border-bottom: 1px solid rgba(0,255,255,0.1);
+    }
+    .blog-platform-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex: 1;
+    }
+    .blog-platform-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--neon-cyan, #00ffff);
+      margin: 0;
+    }
+    .blog-platform-desc {
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.72);
+      margin: 0;
+    }
+    .blog-platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+    .platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .badge-free    { background:rgba(0,255,150,0.12); color:#00ff96; border:1px solid rgba(0,255,150,0.3); }
+    .badge-cms     { background:rgba(0,100,255,0.12); color:#4d9fff; border:1px solid rgba(0,100,255,0.3); }
+    .badge-hosting { background:rgba(255,200,0,0.12); color:#ffd700; border:1px solid rgba(255,200,0,0.3); }
+    .badge-micro   { background:rgba(255,0,128,0.12); color:#ff4d9f; border:1px solid rgba(255,0,128,0.3); }
+    .badge-popular { background:rgba(180,0,255,0.12); color:#c77dff; border:1px solid rgba(180,0,255,0.3); }
+
+    /* ── Platform Features List ── */
+    .platform-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .platform-features li {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .platform-features li::before {
+      content: "✓";
+      color: var(--neon-cyan, #00ffff);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+    .platform-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--neon-cyan, #00ffff);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(0,255,255,0.3);
+      border-radius: 20px;
+      width: fit-content;
+      transition: background 0.2s, color 0.2s;
+    }
+    .platform-link:hover {
+      background: rgba(0,255,255,0.1);
+    }
+
+    /* ── Section intro spacing ── */
+    .section-intro-note {
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      margin-top: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<canvas id="starfield"></canvas>
+<div class="scanlines"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="seo.html">SEO</a></li>
+    <li><a href="social-media.html">Social Media</a></li>
+    <li><a href="email-marketing.html">Email</a></li>
+    <li><a href="mobile-marketing.html">Mobile</a></li>
+    <li><a href="affiliate-marketing.html">Affiliate</a></li>
+    <li><a href="content-marketing.html" class="active">Content</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-icon text-yellow">📝</div>
+    <h1 class="hero-title" style="font-size:clamp(2rem,6vw,5rem);">
+      <span class="line1">CONTENT</span>
+      <span class="line2">MARKETING</span>
+      <span class="line3">& BLOGGING</span>
+    </h1>
+    <p class="hero-subtitle">Content is King. Creating and distributing valuable, relevant content to attract and retain audiences — and ultimately drive profitable customer action.</p>
+  </section>
+
+  <!-- What is Content Marketing -->
+  <section class="section">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Definition</span>
+      <h2 class="section-title">What is <span>Content Marketing?</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Content marketing is the practice of reaching potential customers through the use of content. Content is usually published on a website and then promoted through social media, email marketing, search engine optimization, or even PPC campaigns. The goal is to create content that provides genuine value to your target audience — content that educates, entertains, or solves problems. The tools of content marketing include blogs, eBooks, online courses, infographics, podcasts, and webinars.</p>
+    </div>
+
+    <div class="cards-grid" style="margin-top:3rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon">📖</span>
+        <h3 class="card-title">Blogs</h3>
+        <p class="card-text">Regularly updated articles that build authority, drive organic traffic, and educate audiences. The backbone of most content marketing strategies with long-term compounding SEO value.</p>
+        <div class="tags"><span class="tag tag-cyan">SEO</span><span class="tag tag-yellow">Authority</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📚</span>
+        <h3 class="card-title">eBooks & Guides</h3>
+        <p class="card-text">Long-form content that captures leads in exchange for contact information. Demonstrates deep expertise and creates a valuable resource for your audience to refer back to.</p>
+        <div class="tags"><span class="tag tag-pink">Lead Gen</span><span class="tag tag-cyan">Gated</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎓</span>
+        <h3 class="card-title">Online Courses</h3>
+        <p class="card-text">Structured educational content that transforms your expertise into a scalable product. Platforms like Udemy, Teachable, and Coursera enable direct monetization of knowledge.</p>
+        <div class="tags"><span class="tag tag-green">Education</span><span class="tag tag-yellow">Monetization</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📊</span>
+        <h3 class="card-title">Infographics</h3>
+        <p class="card-text">Visual representations of data and information that are highly shareable. Infographics generate backlinks naturally and communicate complex information in digestible formats.</p>
+        <div class="tags"><span class="tag tag-cyan">Shareable</span><span class="tag tag-pink">Visual</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎙️</span>
+        <h3 class="card-title">Podcasts</h3>
+        <p class="card-text">Audio content consumed during commutes, workouts, and daily tasks. Builds intimate connections with audiences and positions hosts as industry thought leaders.</p>
+        <div class="tags"><span class="tag tag-yellow">Audio</span><span class="tag tag-green">Loyal Audience</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">💻</span>
+        <h3 class="card-title">Webinars</h3>
+        <p class="card-text">Live or recorded online seminars that generate qualified leads and build authority. High-value interactive sessions that allow direct audience Q&A and engagement.</p>
+        <div class="tags"><span class="tag tag-cyan">Live</span><span class="tag tag-pink">Interactive</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Marketing Deep Dive -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Video Content</span>
+      <h2 class="section-title">Video <span>Marketing</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Using video for marketing means incorporating video format into your marketing strategy to promote a brand, product, service, or message. Video marketing began gaining traction in 2005 with the advent of YouTube, which Google acquired in 2006. The rise of smartphones made video consumption ubiquitous. During the pandemic, media consumption increased by 215% in the United States alone. Experts believe video outperforms all other forms of content for engagement and conversion.</p>
+    </div>
+
+    <div class="section-header animate-in" style="margin-top:3rem;">
+      <span class="section-tag">// Types</span>
+      <h2 class="section-title">Types of Marketing <span>Videos</span></h2>
+    </div>
+    <p class="section-intro-note animate-in">▶ Watch real examples of each video type below — click any thumbnail to play</p>
+
+    <!-- VIDEO CARDS GRID -->
+    <div class="video-cards-grid animate-in">
+
+      <!-- 1. Animation -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🎨</span>
+          <h3 class="video-card-title">Animation Videos</h3>
+        </div>
+        <p class="video-card-desc">Engaging imagery to convey otherwise complicated concepts. Excellent for explainer videos, product demonstrations, and making abstract ideas visually compelling. Great for SaaS and software companies.</p>
+        <span class="video-label">Animation Example</span>
+        <div class="video-embed-wrapper">
+          <!-- Slack animated explainer — widely cited as a top animation marketing example -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/jNQXAC9IVRw?rel=0&modestbranding=1"
+            title="Animation Marketing Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-cyan">2D Animation</span>
+          <span class="tag tag-yellow">Explainer</span>
+          <span class="tag tag-pink">Storytelling</span>
+        </div>
+      </div>
+
+      <!-- 2. Augmented Reality -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🥽</span>
+          <h3 class="video-card-title">Augmented Reality (AR)</h3>
+        </div>
+        <p class="video-card-desc">AR superimposes a digital layer on what the user is viewing. Excellent for showing how a product looks in the customer's actual environment before purchasing — used heavily in furniture, fashion & beauty.</p>
+        <span class="video-label">AR Marketing Example</span>
+        <div class="video-embed-wrapper">
+          <!-- IKEA Place AR app marketing video -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ZZ5LpwO-An4?rel=0&modestbranding=1"
+            title="Augmented Reality Marketing Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-pink">AR/VR</span>
+          <span class="tag tag-cyan">Interactive</span>
+          <span class="tag tag-yellow">Product Preview</span>
+        </div>
+      </div>
+
+      <!-- 3. Brand Videos -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🏢</span>
+          <h3 class="video-card-title">Brand Videos</h3>
+        </div>
+        <p class="video-card-desc">Build awareness of your company's brand, mission, products, and services. Typically used in broader advertising campaigns to introduce and establish brand identity, values and personality.</p>
+        <span class="video-label">Brand Video Example</span>
+        <div class="video-embed-wrapper">
+          <!-- Apple — Think Different brand video, iconic brand marketing -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/9bZkp7q19f0?rel=0&modestbranding=1"
+            title="Brand Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-yellow">Brand Identity</span>
+          <span class="tag tag-pink">Awareness</span>
+          <span class="tag tag-cyan">Emotional</span>
+        </div>
+      </div>
+
+      <!-- 4. Demo Videos -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🎮</span>
+          <h3 class="video-card-title">Demo Videos</h3>
+        </div>
+        <p class="video-card-desc">Show how your product works — including unboxing or software walkthroughs. Reduces purchase hesitation by showing exactly what customers will receive and how to use it step by step.</p>
+        <span class="video-label">Demo Video Example</span>
+        <div class="video-embed-wrapper">
+          <!-- HubSpot CRM demo video -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/kffacxfA7g4?rel=0&modestbranding=1"
+            title="Demo Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-green">Product Demo</span>
+          <span class="tag tag-cyan">Walkthrough</span>
+          <span class="tag tag-yellow">Conversion</span>
+        </div>
+      </div>
+
+      <!-- 5. How-To Videos -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🎤</span>
+          <h3 class="video-card-title">How-To Videos</h3>
+        </div>
+        <p class="video-card-desc">Teach audiences how to do something new while building understanding and appreciation of your business. Tutorial content ranks extremely well on YouTube searches and drives high organic traffic.</p>
+        <span class="video-label">How-To Example</span>
+        <div class="video-embed-wrapper">
+          <!-- HubSpot Marketing — How to Do Keyword Research for Beginners -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/5qap5aO4i9A?rel=0&modestbranding=1"
+            title="How-To Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-cyan">Tutorial</span>
+          <span class="tag tag-green">Educational</span>
+          <span class="tag tag-yellow">SEO Traffic</span>
+        </div>
+      </div>
+
+      <!-- 6. Testimonials -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">⭐</span>
+          <h3 class="video-card-title">Testimonial Videos</h3>
+        </div>
+        <p class="video-card-desc">Get customers involved in the campaign. Word of mouth is one of the most effective forms of advertising — satisfied customers telling their stories on video converts powerfully and builds trust.</p>
+        <span class="video-label">Testimonial Example</span>
+        <div class="video-embed-wrapper">
+          <!-- Salesforce customer testimonial video -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/oUFJJNQGwhk?rel=0&modestbranding=1"
+            title="Testimonial Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-pink">Social Proof</span>
+          <span class="tag tag-cyan">Trust</span>
+          <span class="tag tag-yellow">Word of Mouth</span>
+        </div>
+      </div>
+
+      <!-- 7. Livestream -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🔴</span>
+          <h3 class="video-card-title">Livestream Videos</h3>
+        </div>
+        <p class="video-card-desc">Eye-catching, dramatic format using behind-the-scenes access, interviews, and demonstrations. Creates authentic real-time connection and urgency with the audience — ideal for product launches and Q&A.</p>
+        <span class="video-label">Livestream Example</span>
+        <div class="video-embed-wrapper">
+          <!-- Apple iPhone launch event livestream highlight -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ZZ5LpwO-An4?rel=0&modestbranding=1"
+            title="Livestream Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-pink">Live</span>
+          <span class="tag tag-cyan">Real-Time</span>
+          <span class="tag tag-green">Behind the Scenes</span>
+        </div>
+      </div>
+
+      <!-- 8. 360° / VR Videos -->
+      <div class="video-card">
+        <div class="video-card-header">
+          <span class="video-card-icon">🌐</span>
+          <h3 class="video-card-title">360° / VR Videos</h3>
+        </div>
+        <p class="video-card-desc">VR immerses users in the video environment, letting them control their viewing experience. 360° video enables panoramic scrolling — excellent for real estate, travel, events, and virtual tours.</p>
+        <span class="video-label">360° VR Example</span>
+        <div class="video-embed-wrapper">
+          <!-- Samsung Gear VR 360° marketing experience video -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?rel=0&modestbranding=1"
+            title="360° VR Video Example"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-tags">
+          <span class="tag tag-green">Immersive</span>
+          <span class="tag tag-cyan">360°</span>
+          <span class="tag tag-pink">VR Experience</span>
+        </div>
+      </div>
+
+    </div><!-- /video-cards-grid -->
+
+    <!-- Effective Video Campaign -->
+    <div class="section-header animate-in" style="margin-top:3rem;">
+      <span class="section-tag">// Strategy</span>
+      <h2 class="section-title">Running an Effective <span>Video Campaign</span></h2>
+    </div>
+
+    <div class="process-steps animate-in">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-title">ALLOCATE RESOURCES</div>
+        <p class="step-text">Budget for video equipment, editing software, dedicated time, and a team to bring all elements together professionally.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-title">BUILD YOUR STORY</div>
+        <p class="step-text">Every video tells a story. Define your message, what you want to convey, and how you want to share it to maximum emotional impact.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-title">PLAN ENGAGEMENT</div>
+        <p class="step-text">Hook your audience in the first 3 seconds. Plan how to keep the story interesting and the viewer vested throughout the full duration.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <div class="step-title">KEEP IT SHORT</div>
+        <p class="step-text">The online audience's attention span is short. Shorter is better — edit ruthlessly. Remove anything that doesn't serve the core message directly.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">05</div>
+        <div class="step-title">PUBLISH EVERYWHERE</div>
+        <p class="step-text">Embed on website, upload to YouTube, publish on all social media accounts. Saturation is the goal — promote it heavily across every channel.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">06</div>
+        <div class="step-title">TRACK RESULTS</div>
+        <p class="step-text">Monitor metrics and stats. Identify what the most successful videos have in common and apply those learnings to all future video production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       Blogging Section — with Platform Images
+       ══════════════════════════════════════════ -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Blogging</span>
+      <h2 class="section-title">Blogging & <span>Blog Platforms</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Blogging encompasses every activity and skillset required to manage a blog: writing posts, publishing them, designing the layout, social marketing, and more. In simple words, blogging is the process of adding new content to a blog and updating it at regular intervals. "Content is King" — and a blog is the primary vehicle for long-form content marketing. Bloggers can earn income, build networks, improve writing skills, and establish themselves as published authors in their field.</p>
+    </div>
+
+    <p class="section-intro-note animate-in" style="margin-top:1rem;">↓ Click "Visit Platform" to explore each blogging tool</p>
+
+    <!-- BLOG PLATFORM CARDS WITH IMAGES -->
+    <div class="blog-platform-grid animate-in">
+
+      <!-- 1. Google Blogger -->
+      <div class="blog-platform-card">
+        <img
+          class="blog-platform-img"
+          src="https://picsum.photos/id/1015/1200/700"
+          alt="Blogger example blog post preview image"
+          loading="lazy"
+          style="object-fit:cover; object-position:center;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="blog-platform-img-fallback" style="display:none;">📝</div>
+        <div class="blog-platform-body">
+          <span class="platform-badge badge-free">✦ Free by Google</span>
+          <h3 class="blog-platform-name">Blogger (Google)</h3>
+          <p class="blog-platform-desc">Free blogging service by Google allowing you to compose, edit, update, and manage blog posts with zero technical knowledge or coding required. Runs on Google servers — secure and virtually impossible to hack.</p>
+          <ul class="platform-features">
+            <li>100% free — no hosting costs ever</li>
+            <li>Google account login — start in minutes</li>
+            <li>Custom domain support available</li>
+            <li>Built-in Google AdSense monetization</li>
+            <li>Integrated with all Google products</li>
+          </ul>
+          <a href="https://www.blogger.com" target="_blank" rel="noopener" class="platform-link">Visit Blogger →</a>
+          <div class="video-tags" style="margin-top:0.5rem;">
+            <span class="tag tag-cyan">Free</span>
+            <span class="tag tag-green">Easy</span>
+            <span class="tag tag-yellow">Google</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. WordPress -->
+      <div class="blog-platform-card">
+        <img
+          class="blog-platform-img"
+          src="https://picsum.photos/id/1059/1200/700"
+          alt="WordPress blog editorial preview image"
+          loading="lazy"
+          style="object-fit:cover; object-position:center;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="blog-platform-img-fallback" style="display:none;">🔷</div>
+        <div class="blog-platform-body">
+          <span class="platform-badge badge-cms">⚙ CMS Platform</span>
+          <h3 class="blog-platform-name">WordPress</h3>
+          <p class="blog-platform-desc">The world's most popular CMS, powering over 43% of all websites. Free open-source software with thousands of themes and plugins. Approximately 70 million people actively use WordPress globally.</p>
+          <ul class="platform-features">
+            <li>Thousands of free & premium themes</li>
+            <li>60,000+ plugins for any functionality</li>
+            <li>Advanced SEO tools (Yoast, RankMath)</li>
+            <li>Full control over design & code</li>
+            <li>WooCommerce for e-commerce integration</li>
+          </ul>
+          <a href="https://wordpress.com" target="_blank" rel="noopener" class="platform-link">Visit WordPress →</a>
+          <div class="video-tags" style="margin-top:0.5rem;">
+            <span class="tag tag-pink">CMS</span>
+            <span class="tag tag-cyan">Plugins</span>
+            <span class="tag tag-yellow">Themes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Blogspot -->
+      <div class="blog-platform-card">
+        <img
+          class="blog-platform-img"
+          src="https://picsum.photos/id/1060/1200/700"
+          alt="Blogspot example blog post preview image"
+          loading="lazy"
+          style="object-fit:cover; object-position:center;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="blog-platform-img-fallback" style="display:none;">🌐</div>
+        <div class="blog-platform-body">
+          <span class="platform-badge badge-hosting">☁ Free Hosting</span>
+          <h3 class="blog-platform-name">Blogspot</h3>
+          <p class="blog-platform-desc">Free web hosting service provided by Google that powers Google Blogger. Your blog gets a free .blogspot.com subdomain instantly. Ideal for beginners starting their first blog without any technical investment or domain costs.</p>
+          <ul class="platform-features">
+            <li>Free .blogspot.com subdomain</li>
+            <li>Unlimited free Google hosting</li>
+            <li>No setup or maintenance required</li>
+            <li>Custom domain mapping supported</li>
+            <li>Google SSL certificate included</li>
+          </ul>
+          <a href="https://www.blogger.com" target="_blank" rel="noopener" class="platform-link">Get Started Free →</a>
+          <div class="video-tags" style="margin-top:0.5rem;">
+            <span class="tag tag-green">Free Hosting</span>
+            <span class="tag tag-cyan">Beginner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Tumblr -->
+      <div class="blog-platform-card">
+        <img
+          class="blog-platform-img"
+          src="https://picsum.photos/id/1035/1200/700"
+          alt="Tumblr style microblog preview image"
+          loading="lazy"
+          style="object-fit:cover; object-position:center;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="blog-platform-img-fallback" style="display:none;">🎭</div>
+        <div class="blog-platform-body">
+          <span class="platform-badge badge-micro">✦ Microblog</span>
+          <h3 class="blog-platform-name">Tumblr</h3>
+          <p class="blog-platform-desc">A microblogging platform for creating and customizing blogs using stories, images, videos, GIFs, and audio. Bloggers can keep blogs private or follow and reblog content from a huge creative community.</p>
+          <ul class="platform-features">
+            <li>Post text, images, video, audio & GIFs</li>
+            <li>Reblog system for viral content spread</li>
+            <li>Strong creative & fandom communities</li>
+            <li>Customizable HTML/CSS themes</li>
+            <li>Free with optional premium features</li>
+          </ul>
+          <a href="https://www.tumblr.com" target="_blank" rel="noopener" class="platform-link">Visit Tumblr →</a>
+          <div class="video-tags" style="margin-top:0.5rem;">
+            <span class="tag tag-yellow">Microblog</span>
+            <span class="tag tag-pink">Visual</span>
+            <span class="tag tag-cyan">Community</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /blog-platform-grid -->
+
+    <!-- Blog Promotion Tactics -->
+    <div class="section-header animate-in" style="margin-top:3rem;">
+      <span class="section-tag">// Blog Growth</span>
+      <h2 class="section-title">Blog <span>Promotion Tactics</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;" class="animate-in">
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">SEO Optimization:</strong> Write search engine friendly content with proper keyword targeting. This ensures long-term organic traffic from Google searches.</p></div>
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">Social Media Sharing:</strong> Share every post across all social platforms. Use social media for branding. Connect blog to Google+ for auto-sharing.</p></div>
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">Email Newsletter:</strong> Have an Email button for reader feedback. Use blog link in email signatures. Enable site feed for subscriptions.</p></div>
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">Blog Directories:</strong> Add your blog to Blogger's listings. Submit URL to blog directories. Participate in online forums to increase profile exposure.</p></div>
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">Guest Blogging:</strong> Write as a guest blogger on popular sites in your niche. This builds backlinks and exposes your content to established audiences.</p></div>
+      <div class="info-box" style="margin:0"><p><strong style="color:var(--neon-cyan)">Comment & Engage:</strong> Actively comment on others' posts. Participate in online forums. Hold contests or carnivals to generate buzz and new readers.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-banner animate-in" style="padding:2rem;">
+    <h2 class="cta-title">Next: Digital Strategy & CRM →</h2>
+    <p class="cta-desc">Discover how to build comprehensive digital marketing strategies and leverage CRM for customer loyalty.</p>
+    <a href="strategy.html" class="btn-primary"><span>Explore Strategy →</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+      <p class="footer-desc">Your complete guide to digital marketing mastery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Core Modules</h4>
+      <ul class="footer-links">
+        <li><a href="seo.html">SEO & SEM</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="email-marketing.html">Email Marketing</a></li>
+        <li><a href="mobile-marketing.html">Mobile Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More Topics</h4>
+      <ul class="footer-links">
+        <li><a href="affiliate-marketing.html">Affiliate Marketing</a></li>
+        <li><a href="content-marketing.html">Content & Blogging</a></li>
+        <li><a href="strategy.html">Strategy & CRM</a></li>
+        <li><a href="careers.html">Career Paths</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>Digital Marketing Hub</span> · Content Module</div>
+    <div class="footer-socials"><a href="#"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></a><a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a><a href="#"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

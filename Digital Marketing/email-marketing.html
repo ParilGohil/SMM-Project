@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Marketing | Digital Marketing Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<canvas id="starfield"></canvas>
+<div class="scanlines"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="seo.html">SEO</a></li>
+    <li><a href="social-media.html">Social Media</a></li>
+    <li><a href="email-marketing.html" class="active">Email</a></li>
+    <li><a href="mobile-marketing.html">Mobile</a></li>
+    <li><a href="affiliate-marketing.html">Affiliate</a></li>
+    <li><a href="content-marketing.html">Content</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-icon" style="color:var(--neon-yellow)">✉️</div>
+    <h1 class="hero-title" style="font-size:clamp(2rem,6vw,5rem);">
+      <span class="line1">EMAIL</span>
+      <span class="line2">MARKETING</span>
+    </h1>
+    <p class="hero-subtitle">One of the most effective digital channels — promoting business through targeted emails and newsletters with measurable, quantifiable results.</p>
+  </section>
+
+  <!-- What is Email Marketing -->
+  <section class="section">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Definition</span>
+      <h2 class="section-title">What is <span>Email Marketing?</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Email marketing is promoting your business by sending overt emails and newsletters. It uses promotional letters combined with product and service details to deliver a business message to an audience. It is a cost-effective method to convey your message to highly targeted visitors. The key differentiator: email marketing is not spam — it's about companies getting in touch with people genuinely interested in their brands. Digital marketers use all other channels to add leads to email lists, then use email marketing to create customer acquisition funnels.</p>
+    </div>
+
+    <!-- Types of Emails -->
+    <div class="section-header animate-in" style="margin-top:4rem;">
+      <span class="section-tag">// Email Types</span>
+      <h2 class="section-title">Types of <span>Emails</span></h2>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🧾</span>
+        <h3 class="card-title">Transaction Emails</h3>
+        <p class="card-text">Sent after completing a transaction such as buying a product. Confirms the business transaction with information including cost per unit, number of units, total cost, payment mode, shipping details, and delivery time.</p>
+        <div class="tags"><span class="tag tag-cyan">Order Confirmation</span><span class="tag tag-yellow">Receipt</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📰</span>
+        <h3 class="card-title">Newsletters</h3>
+        <p class="card-text">Include information to keep customers involved and informed. They foster long-term relationships with customers by providing industry news, company updates, and valuable educational content regularly.</p>
+        <div class="tags"><span class="tag tag-pink">Weekly</span><span class="tag tag-green">Relationship</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎁</span>
+        <h3 class="card-title">Promotion Emails</h3>
+        <p class="card-text">Carry details of promotional activities such as sales, new offers, discounts, and limited-time deals. They drive urgency and encourage customers to take immediate action before an offer expires.</p>
+        <div class="tags"><span class="tag tag-pink">Offers</span><span class="tag tag-yellow">Urgency</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Setup -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Setup Guide</span>
+      <h2 class="section-title">Setting Up an Email <span>Marketing Campaign</span></h2>
+    </div>
+
+    <div class="process-steps animate-in">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-title">BUILD DATABASE</div>
+        <p class="step-text">Create a customer database. Buy it or generate from your website backend. Include contact information, client status, and lead source details.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-title">CREATE CONTENT</div>
+        <p class="step-text">Create a newsletter with relevant information. Set subject line, timings, and frequency. Add discounts and bonuses. Make it eye-catchy, informational, and useful.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-title">PREPARE & TEST</div>
+        <p class="step-text">Mention deal expiry date and time. Drop necessary links. Buy servers capable of bearing the load. Test email before sending — check all details, images, and links.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <div class="step-title">DEPLOY</div>
+        <p class="step-text">Deploy your newsletter to your segmented list. Personalize the message for different audience segments to maximize relevance and conversion rates.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-number">05</div>
+        <div class="step-title">ANALYZE</div>
+        <p class="step-text">Analyze performance: email delivery rate, opening rate, conversions. Use insights to optimize future campaigns and improve every metric iteratively.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tracking Metrics -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Analytics</span>
+      <h2 class="section-title">Tracking Your <span>Email Campaign</span></h2>
+    </div>
+
+    <div class="cards-grid animate-in">
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-cyan)">👆</span>
+        <h3 class="card-title">Click-Through Rate</h3>
+        <p class="card-text">Gives you a clear view of how many people engage with your mail and are interested in what you offer. The most direct measure of content relevance and offer appeal.</p>
+        <div class="tags"><span class="tag tag-cyan">Engagement</span></div>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-green)">✅</span>
+        <h3 class="card-title">Conversion Rate</h3>
+        <p class="card-text">Helps you know to what extent you are able to achieve your goals. Measures how many email recipients completed the desired action — purchase, signup, or download.</p>
+        <div class="tags"><span class="tag tag-green">Goal Achievement</span></div>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-pink)">🚫</span>
+        <h3 class="card-title">Bounce Rate</h3>
+        <p class="card-text">Lets you know how many consider you a spammer or time-waster. High bounce rates indicate list quality issues or sending to disengaged subscribers.</p>
+        <div class="tags"><span class="tag tag-pink">List Health</span></div>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-yellow)">📈</span>
+        <h3 class="card-title">Subscribers' Growth Rate</h3>
+        <p class="card-text">Lets you decide how much you are able to extend your reach. Measures how quickly your subscriber list is growing minus unsubscribes and bounces.</p>
+        <div class="tags"><span class="tag tag-yellow">List Growth</span></div>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-purple)">📤</span>
+        <h3 class="card-title">Email Forwarding Rate</h3>
+        <p class="card-text">The more is the rate, the more interested your customers are. Forwarded emails generate new subscribers organically, making it a powerful virality indicator.</p>
+        <div class="tags"><span class="tag tag-cyan">Virality</span></div>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-green)">💰</span>
+        <h3 class="card-title">Overall ROI</h3>
+        <p class="card-text">The gist of tracking — how many leads you generate through your campaigns and the revenue generated per dollar invested in email marketing infrastructure.</p>
+        <div class="tags"><span class="tag tag-green">Revenue</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Practices -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Best Practices</span>
+      <h2 class="section-title">Email Campaign <span>Best Practices</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;" class="animate-in">
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">Subject Line:</strong> Keep it under 50 characters. Create curiosity or urgency. Avoid spam trigger words like FREE, URGENT, ACT NOW. Personalize with recipient's name.</p>
+      </div>
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">Segmentation:</strong> Divide your list by behavior, demographics, and purchase history. Targeted emails perform significantly better than broad blasts.</p>
+      </div>
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">Mobile Optimization:</strong> Over 60% of emails are opened on mobile. Use responsive templates, single-column layouts, and large tap targets.</p>
+      </div>
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">Clear CTA:</strong> Every email should have one clear call-to-action button. Multiple CTAs dilute focus and reduce conversion rates significantly.</p>
+      </div>
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">Timing:</strong> Tuesday–Thursday mornings typically see the highest open rates. Test different send times for your specific audience segment.</p>
+      </div>
+      <div class="info-box" style="margin:0">
+        <p><strong style="color:var(--neon-cyan)">A/B Testing:</strong> Test subject lines, send times, CTA text, and email design. Even small improvements compound over many campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner animate-in" style="padding:2rem;">
+    <h2 class="cta-title">Next: Mobile Marketing →</h2>
+    <p class="cta-desc">Explore how to reach audiences on smartphones through SMS, apps, QR codes, and location-based advertising.</p>
+    <a href="mobile-marketing.html" class="btn-primary"><span>Explore Mobile Marketing →</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+      <p class="footer-desc">Your complete guide to digital marketing mastery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Core Modules</h4>
+      <ul class="footer-links">
+        <li><a href="seo.html">SEO & SEM</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="email-marketing.html">Email Marketing</a></li>
+        <li><a href="mobile-marketing.html">Mobile Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More Topics</h4>
+      <ul class="footer-links">
+        <li><a href="affiliate-marketing.html">Affiliate Marketing</a></li>
+        <li><a href="content-marketing.html">Content & Blogging</a></li>
+        <li><a href="strategy.html">Strategy & CRM</a></li>
+        <li><a href="careers.html">Career Paths</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>Digital Marketing Hub</span> · Email Module</div>
+    <div class="footer-socials"><a href="#"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></a><a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a><a href="#"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

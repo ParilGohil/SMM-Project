@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Marketing | Digital Marketing Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<canvas id="starfield"></canvas>
+<div class="scanlines"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="seo.html">SEO</a></li>
+    <li><a href="social-media.html">Social Media</a></li>
+    <li><a href="email-marketing.html">Email</a></li>
+    <li><a href="mobile-marketing.html" class="active">Mobile</a></li>
+    <li><a href="affiliate-marketing.html">Affiliate</a></li>
+    <li><a href="content-marketing.html">Content</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-icon text-pink">📲</div>
+    <h1 class="hero-title" style="font-size:clamp(2rem,6vw,5rem);">
+      <span class="line1">MOBILE</span>
+      <span class="line2">MARKETING</span>
+    </h1>
+    <p class="hero-subtitle">A multi-channel digital marketing strategy reaching audiences on smartphones, tablets, and mobile devices via websites, email, SMS, apps, and social media.</p>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="stats-section" style="padding:3rem 2rem;">
+    <div style="max-width:1400px;margin:0 auto;">
+      <div class="stats-grid animate-in">
+        <div class="stat-card">
+          <div class="stat-number text-cyan" data-target="80">80%</div>
+          <div class="stat-label">Internet users own a smartphone</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-pink" data-target="60">60%</div>
+          <div class="stat-label">Digital media time on mobile</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-yellow" data-target="98">98%</div>
+          <div class="stat-label">SMS campaign open rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-green" data-target="95">95%</div>
+          <div class="stat-label">Texts read within 3 minutes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Mobile Marketing -->
+  <section class="section">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Definition</span>
+      <h2 class="section-title">What is <span>Mobile Marketing?</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Mobile marketing is a multi-channel, digital marketing strategy aimed at reaching a target audience on their smartphones, tablets, and other mobile devices via websites, email, SMS and MMS, social media, and apps. Mobile is disrupting the way people engage with brands. Everything that can be done on a desktop computer is now available on a mobile device — from opening an email to visiting your website to reading your content, all accessible through a small mobile screen.</p>
+    </div>
+  </section>
+
+  <!-- Mobile Marketing Strategies -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Strategies</span>
+      <h2 class="section-title">Types of Mobile Marketing <span>Strategies</span></h2>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card-3d animate-in">
+        <span class="card-icon">📱</span>
+        <h3 class="card-title">App-Based Marketing</h3>
+        <p class="card-text">Mobile advertising involving mobile apps. 80% of mobile time is spent in apps. Services like Google AdMob help advertisers create mobile ads appearing within third-party apps. Facebook Promoted Post ads integrate seamlessly into news feeds that users often don't recognize as ads.</p>
+        <div class="tags"><span class="tag tag-cyan">AdMob</span><span class="tag tag-pink">In-App</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎮</span>
+        <h3 class="card-title">In-Game Mobile Marketing</h3>
+        <p class="card-text">Mobile ads appearing within mobile games as banner popups, full-page image ads, or video ads between loading screens. Reaches highly engaged audiences during gaming sessions when attention is focused.</p>
+        <div class="tags"><span class="tag tag-yellow">Banner Ads</span><span class="tag tag-cyan">Video Ads</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">📷</span>
+        <h3 class="card-title">QR Codes</h3>
+        <p class="card-text">Scanned by users, taking them to a specific webpage. QR codes are aligned with mobile gamification and have an element of mystery — users don't always know exactly where scanning will take them, creating curiosity-driven engagement.</p>
+        <div class="tags"><span class="tag tag-green">Scannable</span><span class="tag tag-cyan">Engagement</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">📍</span>
+        <h3 class="card-title">Location-Based Marketing</h3>
+        <p class="card-text">Ads that appear on mobile devices based on a user's location relative to a specific area or business. Advertisers can target users within a 1-mile radius of their business with hyper-relevant, local offers.</p>
+        <div class="tags"><span class="tag tag-pink">GPS</span><span class="tag tag-yellow">Geo-Fencing</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">🔍</span>
+        <h3 class="card-title">Mobile Search Ads</h3>
+        <p class="card-text">Basic Google search ads built for mobile, featuring extra add-on extensions like click-to-call buttons and maps integration. Designed for one-thumb usability with immediate action capabilities.</p>
+        <div class="tags"><span class="tag tag-cyan">Google Ads</span><span class="tag tag-green">Click-to-Call</span></div>
+      </div>
+
+      <div class="card-3d animate-in">
+        <span class="card-icon">💬</span>
+        <h3 class="card-title">SMS / MMS Marketing</h3>
+        <p class="card-text">Text message campaigns for promotions, notifications, and customer service. 98% open rate and 45% response rate make SMS the most direct marketing channel available to businesses.</p>
+        <div class="tags"><span class="tag tag-pink">SMS</span><span class="tag tag-yellow">MMS</span><span class="tag tag-green">98% Open</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMS Deep Dive -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// SMS Campaigns</span>
+      <h2 class="section-title">Why SMS Campaigns <span>Matter</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;" class="animate-in">
+      <div class="card-3d">
+        <span class="card-icon text-cyan">📊</span>
+        <h3 class="card-title">Extraordinary Open Rates</h3>
+        <p class="card-text">SMS campaigns achieve a remarkable 98% open rate and a 45% response rate — figures email marketing can only dream of. This makes SMS the highest-engagement marketing channel.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-pink">⚡</span>
+        <h3 class="card-title">Drives Immediate Action</h3>
+        <p class="card-text">SMS messages create a feeling of time sensitivity and urgency. No other marketing channel creates such a strong urgency that many customers decide to act rapidly within minutes of receiving the message.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-yellow">⏱️</span>
+        <h3 class="card-title">Easy & Instant</h3>
+        <p class="card-text">SMS takes only moments to create compared to HTML-designed emails. 95% of all texts are read within 3 minutes after being sent, enabling real-time campaign results measurement.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon text-green">🔧</span>
+        <h3 class="card-title">Multifunctional</h3>
+        <p class="card-text">SMS campaigns can inform about new products, deliver exclusive offers, send updates and notifications, remind about appointments, report relevant news, or improve customer service.</p>
+      </div>
+      <div class="card-3d">
+        <span class="card-icon" style="color:var(--neon-purple)">🤝</span>
+        <h3 class="card-title">Works with Other Channels</h3>
+        <p class="card-text">SMS can improve email marketing results — send SMS to "catch up" people who never opened your email. Use it strategically as a supporting channel in omnichannel campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile App section -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// App Marketing</span>
+      <h2 class="section-title">Mobile <span>Apps</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>A mobile app is a software application developed specifically for use on small, wireless computing devices such as smartphones and tablets. Mobile apps are designed with consideration for device demands and constraints, and also to take advantage of specialized device capabilities. A gaming app, for example, might leverage the iPhone's accelerometer. App marketing strategy involves both driving downloads (ASO) and retaining active users through push notifications, in-app messaging, and personalized experiences.</p>
+    </div>
+
+    <!-- ASO Section -->
+    <div class="section-header animate-in" style="margin-top:3rem;">
+      <span class="section-tag">// App Store Optimization</span>
+      <h2 class="section-title">App Store Optimization <span>(ASO)</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>App Store Optimization (ASO) is the process of optimizing mobile apps to rank higher in an app store's search results. The higher your app ranks, the more visible it is to potential customers — and increased visibility translates directly to more traffic to your app's page and more downloads.</p>
+    </div>
+
+    <div class="cards-grid" style="margin-top:2rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon text-cyan">📛</span>
+        <h3 class="card-title">App Name / Title</h3>
+        <p class="card-text">Place the keyword with the heaviest search traffic in the title. Avoid changing it too often — as your app ranks higher and gains reviews, word spreads. Changing title disrupts organic word-of-mouth growth.</p>
+        <div class="tags"><span class="tag tag-cyan">Primary Factor</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon text-pink">🔑</span>
+        <h3 class="card-title">Keywords</h3>
+        <p class="card-text">Know which keywords are most relevant and frequently used by your target audience. Monitor competitors weekly to understand how you compare and identify keyword opportunities.</p>
+        <div class="tags"><span class="tag tag-pink">Research</span><span class="tag tag-cyan">Monitoring</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon text-yellow">📝</span>
+        <h3 class="card-title">Description</h3>
+        <p class="card-text">Clearly communicate what your app does and its benefits. The first 3 lines are crucial as users must tap "More" to see additional content. Include social proof and key features prominently.</p>
+        <div class="tags"><span class="tag tag-yellow">First Impression</span></div>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon text-green">⬇️</span>
+        <h3 class="card-title">Downloads & Ratings</h3>
+        <p class="card-text">Total downloads and ratings significantly impact ASO ranking but are difficult to control directly. Incentivize happy users to rate and review the app through in-app prompts at the right moments.</p>
+        <div class="tags"><span class="tag tag-green">Social Proof</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner animate-in" style="padding:2rem;">
+    <h2 class="cta-title">Next: Affiliate Marketing →</h2>
+    <p class="cta-desc">Learn how performance-based affiliate programs work and how to earn commissions promoting products.</p>
+    <a href="affiliate-marketing.html" class="btn-primary"><span>Explore Affiliate Marketing →</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+      <p class="footer-desc">Your complete guide to digital marketing mastery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Core Modules</h4>
+      <ul class="footer-links">
+        <li><a href="seo.html">SEO & SEM</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="email-marketing.html">Email Marketing</a></li>
+        <li><a href="mobile-marketing.html">Mobile Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More Topics</h4>
+      <ul class="footer-links">
+        <li><a href="affiliate-marketing.html">Affiliate Marketing</a></li>
+        <li><a href="content-marketing.html">Content & Blogging</a></li>
+        <li><a href="strategy.html">Strategy & CRM</a></li>
+        <li><a href="careers.html">Career Paths</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>Digital Marketing Hub</span> · Mobile Module</div>
+    <div class="footer-socials"><a href="#"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></a><a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a><a href="#"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

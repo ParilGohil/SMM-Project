@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Marketing | Digital Marketing Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<canvas id="starfield"></canvas>
+<div class="scanlines"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="seo.html">SEO</a></li>
+    <li><a href="social-media.html" class="active">Social Media</a></li>
+    <li><a href="email-marketing.html">Email</a></li>
+    <li><a href="mobile-marketing.html">Mobile</a></li>
+    <li><a href="affiliate-marketing.html">Affiliate</a></li>
+    <li><a href="content-marketing.html">Content</a></li>
+    <li><a href="strategy.html">Strategy</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-icon text-pink">📱</div>
+    <h1 class="hero-title" style="font-size:clamp(2rem,6vw,5rem);">
+      <span class="line1">SOCIAL MEDIA</span>
+      <span class="line2">MARKETING</span>
+    </h1>
+    <p class="hero-subtitle">Creating and sharing content on social networks to achieve marketing and branding goals — from brand awareness to direct sales.</p>
+  </section>
+
+  <!-- What is SMM -->
+  <section class="section">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Definition</span>
+      <h2 class="section-title">What is <span>SMM?</span></h2>
+    </div>
+    <div class="info-box animate-in">
+      <p>Social Media Marketing (SMM) is a form of internet marketing that involves creating and sharing content on social media networks to achieve marketing and branding goals. SMM includes posting text and image updates, videos, and other content that drives audience engagement, as well as paid social media advertising. The primary goal is to produce content that users will share with their social network to increase brand exposure and broaden customer reach.</p>
+    </div>
+
+    <div class="cards-grid" style="margin-top:3rem;">
+      <div class="card-3d animate-in">
+        <span class="card-icon">🎯</span>
+        <h3 class="card-title">Brand Awareness</h3>
+        <p class="card-text">Building recognition and trust across social platforms through consistent posting, engaging content, and authentic brand voice that resonates with target audiences.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">🔍</span>
+        <h3 class="card-title">Social Media Optimization (SMO)</h3>
+        <p class="card-text">Like SEO for search engines, SMO is a strategy for drawing new and unique visitors to a website by adding social links (RSS feeds, sharing buttons) and promoting activity through social posts.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">💬</span>
+        <h3 class="card-title">Social CRM</h3>
+        <p class="card-text">SMM helps companies get direct feedback from customers while making the company seem more personable. Customers can ask questions and voice complaints through social channels.</p>
+      </div>
+      <div class="card-3d animate-in">
+        <span class="card-icon">📊</span>
+        <h3 class="card-title">Lead Generation</h3>
+        <p class="card-text">Social media marketing can be used to get leads and even as a direct sales channel through promoted posts, tweets, targeted ads, and shoppable content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Breakdown -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Platforms</span>
+      <h2 class="section-title">Social Media <span>Platforms</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
+      <div class="card-3d animate-in" style="border-color:rgba(24,119,242,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></span>
+        <h3 class="card-title" style="color:#4080ff">Facebook</h3>
+        <p class="card-text">The platform with the maximum number of active users. Keep content light and casual — interesting topics with pictures get more Likes and Shares. Don't use a promotional tone; people come to socialize.</p>
+        <div class="tags"><span class="tag tag-cyan">Largest Reach</span><span class="tag tag-pink">Ad Library</span></div>
+      </div>
+
+      <div class="card-3d animate-in" style="border-color:rgba(29,161,242,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></span>
+        <h3 class="card-title" style="color:#1da1f2">Twitter / X</h3>
+        <p class="card-text">Share content as articles, videos, images, or simple updates. Twitter moves fast — use TweetDeck to manage multiple conversations and schedule content efficiently.</p>
+        <div class="tags"><span class="tag tag-cyan">Real-Time</span><span class="tag tag-yellow">TweetDeck</span></div>
+      </div>
+
+      <div class="card-3d animate-in" style="border-color:rgba(0,119,181,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></span>
+        <h3 class="card-title" style="color:#0077b5">LinkedIn</h3>
+        <p class="card-text">Join relevant groups and share quality professional content. LinkedIn Lead Ads drive visitors to custom landing pages. Best for B2B marketing and establishing industry authority.</p>
+        <div class="tags"><span class="tag tag-cyan">B2B</span><span class="tag tag-green">Professional</span></div>
+      </div>
+
+      <div class="card-3d animate-in" style="border-color:rgba(225,48,108,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i></span>
+        <h3 class="card-title" style="color:#e1306c">Instagram</h3>
+        <p class="card-text">Visual platform excellent for product showcases, Reels, Stories, and brand aesthetics. Shopping integration allows direct purchasing. Short-form video (Reels) dominates the algorithm.</p>
+        <div class="tags"><span class="tag tag-pink">Visual</span><span class="tag tag-cyan">Reels</span><span class="tag tag-yellow">Shopping</span></div>
+      </div>
+
+      <div class="card-3d animate-in" style="border-color:rgba(255,0,0,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></span>
+        <h3 class="card-title" style="color:#ff0000">YouTube</h3>
+        <p class="card-text">The second largest search engine in the world. Users turn to YouTube before buying decisions, to learn, review, or relax. Video marketing integrated with SEO yields maximum results.</p>
+        <div class="tags"><span class="tag tag-pink">2nd Search Engine</span><span class="tag tag-cyan">Video SEO</span></div>
+      </div>
+
+      <div class="card-3d animate-in" style="border-color:rgba(255,100,100,0.3)">
+        <span class="card-icon"><i class="fa-brands fa-pinterest" style="color: #E60023;"></i></span>
+        <h3 class="card-title" style="color:#ff6b6b">Pinterest & Quora</h3>
+        <p class="card-text">Pinterest drives e-commerce sales through image sharing. Quora is a Q&A platform where posting expertise helps establish subject matter authority and drives organic traffic.</p>
+        <div class="tags"><span class="tag tag-yellow">Visual Commerce</span><span class="tag tag-green">Authority</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMM Tools -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Tools</span>
+      <h2 class="section-title">Social Media Marketing <span>Tools</span></h2>
+    </div>
+    <div class="tools-grid animate-in">
+      <div class="tool-card">
+        <div class="tool-icon">🦉</div>
+        <div>
+          <div class="tool-name">HootSuite</div>
+          <div class="tool-desc">Schedule posts across all major platforms, manage multiple accounts, and get robust training. Easy for agencies handling hundreds of accounts.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🚀</div>
+        <div>
+          <div class="tool-name">HubSpot</div>
+          <div class="tool-desc">Monitor, publish, and get closed-loop reporting data. See what posts drive actual leads and sales, not just engagement metrics.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📚</div>
+        <div>
+          <div class="tool-name">MeetEdgar</div>
+          <div class="tool-desc">Automatically re-shares evergreen content for maximum traffic impact. Recycles your best posts intelligently to keep audiences engaged.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></div>
+        <div>
+          <div class="tool-name">TweetDeck</div>
+          <div class="tool-desc">Free multi-column Twitter management. Follow multiple conversations simultaneously. Fast scheduling makes Twitter manageable.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">⚡</div>
+        <div>
+          <div class="tool-name">IFTTT</div>
+          <div class="tool-desc">"If This Then That" — automation tool linking services with triggers and actions. Publish blog → auto create tweet. Saves hours weekly.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📦</div>
+        <div>
+          <div class="tool-name">Buffer</div>
+          <div class="tool-desc">Schedule posts across all channels, customize each for different platforms, share at optimal times, and track which content gets the most traction.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🌱</div>
+        <div>
+          <div class="tool-name">Sprout Social</div>
+          <div class="tool-desc">Monitor mentions, engage brand advocates, schedule content, and use reporting tools. Treats social as a virtual concierge for clients.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🎨</div>
+        <div>
+          <div class="tool-name">Canva</div>
+          <div class="tool-desc">Design presentations, social graphics, and visuals with thousands of beautiful layouts, stock photos, icons, shapes, and fonts — no design skills needed.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">✨</div>
+        <div>
+          <div class="tool-name">Adobe Post</div>
+          <div class="tool-desc">Create stunning social graphics instantly. Handcrafted remixable design templates, beautiful auto-applied typography, and one-tap text-to-graphic transformation.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📋</div>
+        <div>
+          <div class="tool-name">Bundle Post</div>
+          <div class="tool-desc">Content curation tool that aggregates and schedules social media content efficiently. Add hashtags, search and edit with browser plugin, and keep audiences engaged.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FTC Compliance -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header animate-in">
+      <span class="section-tag">// Legal Note</span>
+      <h2 class="section-title">FTC <span>Compliance</span></h2>
+    </div>
+    <div class="info-box animate-in" style="border-left-color:var(--neon-pink);">
+      <p>The Federal Trade Commission (FTC) has updated its rules to include SMM. If a company provides a blogger or online commenter with free products or incentives to generate positive buzz, those online comments are treated legally as endorsements. Both the blogger and the company are responsible for ensuring incentives are clearly and conspicuously disclosed, and that posts contain no misleading or unsubstantiated statements — in compliance with FTC rules concerning unfair or deceptive advertising.</p>
+    </div>
+  </section>
+
+  <div class="cta-banner animate-in" style="padding:2rem;">
+    <h2 class="cta-title">Next: Email Marketing →</h2>
+    <p class="cta-desc">Discover the power of direct communication through email campaigns, newsletters, and automation.</p>
+    <a href="email-marketing.html" class="btn-primary"><span>Explore Email Marketing →</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">◈</span> Digital Marketing Hub</a>
+      <p class="footer-desc">Your complete guide to digital marketing mastery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Core Modules</h4>
+      <ul class="footer-links">
+        <li><a href="seo.html">SEO & SEM</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="email-marketing.html">Email Marketing</a></li>
+        <li><a href="mobile-marketing.html">Mobile Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More Topics</h4>
+      <ul class="footer-links">
+        <li><a href="affiliate-marketing.html">Affiliate Marketing</a></li>
+        <li><a href="content-marketing.html">Content & Blogging</a></li>
+        <li><a href="strategy.html">Strategy & CRM</a></li>
+        <li><a href="careers.html">Career Paths</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>Digital Marketing Hub</span> · Social Media Module</div>
+    <div class="footer-socials"><a href="#"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></a><a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a><a href="#"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
